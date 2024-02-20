@@ -10,8 +10,6 @@ public class HelloController {
     private HelloService service;
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
-    @Autowired
     public HelloController(HelloService service) {
         this.service = service;
     }
@@ -20,8 +18,4 @@ public class HelloController {
         return service.greeting();
     }
 
-    public HelloController(HelloService service, JdbcTemplate jdbcTemplate) {
-        this.service = service;
-        this.jdbcTemplate = jdbcTemplate;
-    }
 }
